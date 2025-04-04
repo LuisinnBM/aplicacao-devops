@@ -18,9 +18,10 @@
 
 <h2 id="features">✨ Funcionalidades</h2>
 <ul>
-  <li>✅ Funcionalidade 1</li>
-  <li>📦 Integração com API XYZ</li>
-  <li>🧪 Testes automatizados</li>
+  <li>✅ Método Get</li>
+  <li>✅ Método Post</li>
+  <li>✅ Utilização de Git</li>
+  <li>✅ CRUD de clientes</li>
 </ul>
 
 <hr>
@@ -35,18 +36,20 @@ npm install
 <hr>
 
 <h2 id="uso">💻 Uso</h2>
-<pre><code>npm start</code></pre>
+<pre><code>npm node src/app.js</code></pre>
 <p>Abra <code>http://localhost:3000</code> no navegador para ver a aplicação.</p>
 
 <hr>
 
-<h2 id="contribuindo">🤝 Contribuindo</h2>
+<h2 id="contribuindo">🤝 Integrantes</h2>
 <p>
-Sinta-se à vontade para abrir <i>issues</i> ou enviar <i>pull requests</i>!<br>
-Confira o <a href="CONTRIBUTING.md">guia de contribuição</a> para mais detalhes.
+Integrantes<br>
+Luis Bolina Martins
+João Vitor Castanheira Corrêa
+João Pedro Bastos
 </p>
 
 
 <p align="center">
-  Feito com ❤️ por <a href="https://github.com/LuisinnBM/aplicacao-devops">João Vitor</a>
+  Faculdade Unicesusc🏦
 </p>
