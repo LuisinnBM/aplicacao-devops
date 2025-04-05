@@ -2,53 +2,36 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-// Importante para converter os dados que chegam no POST para JSON. Sem isso o body da requisição não aparece
-app.use(express.json());
+// Para receber dados no formato JSON
+app.use(express.json())
 
-let data = {
-	'Nomes' : []
+let pessoas = {
+  Nomes: []
 }
 
+// Rota GET para exibir o formulário
 app.get('/Nomes', (req, res) => {
-	res.sendFile('views/index.html', { root: __dirname })
+  res.sendFile('views/index.html', { root: __dirname })
 })
 
+// Rota POST para receber um nome e salvar
 app.post('/Nomes', (req, res) => {
-	
-	// Normalmente, estes dados são eviados ao banco de dados, que nos retorna um ID
-	// Vamos simular isso atribuindo ao ID o INDEX que o item terá no array
-	
-	let newNome = req.body
-	newNome.id = 
+  const nome = req.body.nome
+  console.log('Nome recebido:', nome)
 
-	data.customers.push(newCustomer)
-	res.status(201).json({"new_customer_id": newCustomer.id})
+  // Simular geração de ID como o índice no array
+  const id = pessoas.Nomes.length
+
+  // Criar objeto com nome e ID
+  const novoNome = { id: id, nome: nome }
+
+  // Adicionar ao array
+  pessoas.Nomes.push(novoNome)
+
+  // Responder com status 201 e o ID gerado
+  res.status(201).json({ novo_nome_id: novoNome.id })
 })
-
-// app.get('/customers/:id', (req, res) => {
-//     let idUsuario = req.params.id
-//     //Retornar apenas o elemento da lista que tem o id solicitado
-// })
-
-
-// Essa é a forma de implementar este endpoint
-app.get('/', (req, res) => {
-	res.sendFile('views/index.html', { root: __dirname })
-	})
-
-
-// app.put('/customers/:id', (req, res) => {
-//     let idUsuario = req.params.id
-//     //Alterar dados do elemento da lista com id
-// })
-
-
-// app.delete('/customers/:id', (req, res) => {
-//     let idUsuario = req.params.id
-//     // Remover elemento da lista com id 
-// })
-
 
 app.listen(port, () => {
-  console.log('Example app listening on port: ' + port)
-})
+	console.log('Example app listening on port: ' + port)
+  })
